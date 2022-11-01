@@ -1,0 +1,37 @@
+
+    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-light bg-light ">
+        <div class="container-fluid">
+                <img src="/img/logo.png" alt="logo Epi" style="width:150px; height: 50px;">
+                <a class="navbar-brand" href="/">e-Recruitement</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/annonces">Nos Annonces</a>
+                    <% if (isAdmin) { %>
+                    <a class="nav-item nav-link" href="#">Candidature aux annonces</a>
+                    <% } %>  
+                    <a class="nav-item nav-link" href="#">Candidature Spontanée</a>
+                    <% if (isUser && ! isAdmin) { %>        
+                    <a class="nav-item nav-link" href="#">Mes Candidatures</a>
+                    <% } %>
+                </div>
+                </div>
+                <% if (isUser) { %>
+                    <form action="/logout" method="POST">
+                        <input type="submit" value="logout" class="btn btn-danger">
+                    </form>
+                <% }  else { %>
+                <ul  class="navbar-nav ml-auto">
+                    <li class="nav-item2 pl-2 mb-2 mb-md-0">
+                    <a href="#!" class="btn btn-light btn-md btn-rounded btn-navbar waves-effect waves-light" onclick="openModalSignIn()">
+                        Sign in
+                    </a>
+                    </li>
+                </ul>
+                <% } %>
+                
+            </div>
+      </nav>
+<%- include('../login.ejs') %>

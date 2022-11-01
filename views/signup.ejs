@@ -1,0 +1,25 @@
+<!-- Sign Up modal -->
+
+<div id="Simplemodale" class="modal">
+    <div class="modalContentt">
+        <span id="closeBtn" onclick="closeModalSingUp()">&times;</span>
+        <div class="header">
+            <h3 style="text-align: center;">Sign Up pour continuer</h3>
+        </div>
+        <form action="/signup" method="POST">
+          <div class="form-group" style="align-items: center;">
+            <label style="font-weight: bold;" for="nomCandidat" style="text-align: center;">Nom: </label>
+            <input name="username" style="border-radius: 15px;font-weight: bold;" type="text" class="form-control" id="nomCandidat" aria-describedby="emailHelp" placeholder="">
+            <label style="font-weight: bold;" for="exampleInputEmail1" style="text-align: center;">Email: </label>
+            <input name="email" style="border-radius: 15px;font-weight: bold;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+          </div>
+          <div class="form-group">
+            <label style="font-weight: bold;" for="exampleInputPassword1">Mot de passe</label>
+            <input name="password" style="border-radius: 15px;font-weight: bold;" type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+            <label style="font-weight: bold;" for="exampleInputPassword1">Confirmer votre mot de passe</label>
+            <input name="confirmPassword" style="border-radius: 15px;font-weight: bold;" type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+          </div>
+          <button type="submit" class="btn btn-lg btn-primary" style="border-radius: 10px;background-color: rgb(201, 36,46);margin-left: 40%;">valider</button>
+        </form>     
+    </div>
+  </div>

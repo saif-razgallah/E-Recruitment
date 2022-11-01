@@ -1,0 +1,132 @@
+.navbar-nav a {
+    font-size: 20px;
+}
+.navbar-nav a:hover {
+     border-bottom: 3px solid rgb(201, 36, 46);
+}    
+.nav-item, nav-link:hover {
+    color: rgb(201, 36, 46);
+
+}
+.navbar-brand {
+    font-family: 'Fahkwang', sans-serif;
+    font-weight: bold;
+}
+.nav-item2 a {
+    background-color:rgb(201, 36, 46);
+    border-radius: 25px;
+    color: whitesmoke;
+}
+
+.intro {
+    margin-top: 50px;
+    border: 1px rgb(201, 36,46) solid;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px rgb(201, 36,46);
+}
+.epiIntro {
+    padding: 25px;
+}
+footer {
+    background-color: rgb(201, 36,46);
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+.footer-items {
+   justify-content: center;
+}
+i {
+    color: bisque;
+}
+i:hover{
+    font-size: larger;
+
+}
+
+ul {
+    list-style: none; /* Remove default bullets */
+  }
+  
+  ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color:rgb(201, 36,46); /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+
+
+  #posteTech{
+    background-color:rgb(201, 36,46) ;
+    color: aliceblue;
+    text-align: center;
+}
+
+.card {
+    margin-top: 20px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+#postuler {
+    border-radius: 5px;
+    background-color:rgb(248, 221, 222)  ;
+   
+}
+
+#postuler:hover {
+    background-color: rgb(201, 36,46);
+    color: white;
+}
+
+
+/* Sign in Modal style */
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top:0; 
+    left:0;
+    overflow: auto;
+    height: 100%;
+    width:100%;
+    background-color: rgb(0, 0,0,0.8);
+    opacity: 90%;
+}
+
+.modalContent{
+    background-color: white;
+    padding: 20px;
+    margin: 10%;
+    margin-left: 30%;
+    width: 40%;
+    box-shadow: 0 5px 8px 0 rgb(201, 24, 24), 0 7px 20px 0 rgb(197, 31, 31);
+    animation-name: openModal;
+    animation-duration: 0.4s; 
+    border-radius: 20px;
+}
+
+#closeBtn{
+    float: right;
+    color: black;
+    font-size: 26px;
+}
+
+#closeBtn:hover, #closeBtn:focus {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.modalContentt{
+    background-color: white;
+    padding: 20px;
+    margin-left: 30%;
+    margin-top: 10px;
+    width: 40%;
+    box-shadow: 0 5px 8px 0 rgb(201, 24, 24), 0 7px 20px 0 rgb(197, 31, 31);
+    animation-name: openModal;
+    animation-duration: 0.4s; 
+    border-radius: 20px;
+}

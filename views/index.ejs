@@ -1,0 +1,104 @@
+<%- include('parts/header.ejs') %>
+<%- include('parts/navbar.ejs') %>
+
+<div class="container" style="padding-top: 15px;">
+
+
+   <form action="/annonces" method="GET">
+      <select name="category" class="form-control">
+        <option value="all">Tous</option>
+        <option value="Techniques">Techniques</option>
+        <option value="Administration">Administration</option>
+        <option value="Enseignement">Enseignement</option>
+      </select><br>
+      <input type="submit" class="btn btn-primary" value="Envoyer">
+   </form>
+  
+</div>
+<!--  Contenu  -->
+     <!-- Carousel -->
+     <div class="container" style ="margin-top: 40px;">
+      <!-- Partie Postes techniques  -->
+      
+     <div id="posteTech" class="row" style="position: relative; margin-top: 40px;">
+       <div class="col-sm-12"><h2>Postes Techniques</h2></div> 
+      </div>
+      <% var a = 0 %>
+      <% for (let annonce of annonces) { %>
+        <% if ( annonce.category === 'Techniques' ) { a++ %>
+       <div class="card">
+         <h5 class="card-header"><%= annonce.name %></h5>
+         <div class="card-body">
+           <h5 class="card-title">Description du poste</h5>
+           <p class="card-text"><%= annonce.description %></p>
+           <% if (!isUser) { %>
+            <a id="postuler" href="#" onclick="openModalSignUp()" class="btn">Postuler pour ce Job</a>
+            <% }  else { %>
+              <a id="postuler" href="/candidature"  class="btn">Postuler pour ce Job</a> 
+            <% } %>           </div>
+       </div> 
+       <% } %>
+       <% } %> 
+       <% if( a < 1) { %>
+        <br>
+        <div class="alert alert-danger">
+          il n'y a pas des annonces
+        </div>
+       <% } %> 
+      <!-- Partie postes d'administration -->
+      <div id="posteTech" class="row" style="position: relative;margin-top: 40px;">
+       <div class="col-sm-12"><h2>Administration</h2></div> 
+      </div>
+      <% var b = 0 %>
+      <% for (let annonce of annonces) { %>
+        <% if ( annonce.category === 'Administration' ) { b++ %>
+       <div class="card">
+         <h5 class="card-header"><%= annonce.name %></h5>
+         <div class="card-body">
+           <h5 class="card-title">Description du poste</h5>
+           <p class="card-text"><%= annonce.description %></p>
+           <% if (!isUser) { %>
+            <a id="postuler" href="#" onclick="openModalSignUp()" class="btn">Postuler pour ce Job</a>
+            <% }  else { %>
+              <a id="postuler" href="/candidature"  class="btn">Postuler pour ce Job</a> 
+            <% } %>           </div>
+       </div>
+       <% } %>
+       <% } %> 
+       <% if( b < 1) { %>
+        <br>
+        <div class="alert alert-danger">
+          il n'y a pas des annonces
+        </div>
+       <% } %> 
+       <!-- Partie pour l'enseignement -->
+       <div id="posteTech" class="row" style="position: relative;margin-top: 40px;">
+         <div class="col-sm-12"><h2>Enseignement</h2></div> 
+        </div>
+        <% var c = 0 %>
+        <% for (let annonce of annonces) { %>
+            <% if ( annonce.category === 'Enseignement' ) { c++ %>
+              <div class="card">
+                <h5 class="card-header"><%= annonce.name %></h5>
+                <div class="card-body">
+                  <h5 class="card-title">Description du poste</h5>
+                  <p class="card-text"><%= annonce.description %></p>
+                  <% if (!isUser) { %>
+                  <a id="postuler" href="#" onclick="openModalSignUp()" class="btn">Postuler pour ce Job</a>
+                  <% }  else { %>
+                    <a id="postuler" href="/candidature"  class="btn">Postuler pour ce Job</a> 
+                  <% } %>  
+                </div>
+              </div>
+            <% } %>
+        <% } %> 
+        <% if( c < 1) { %>
+          <br>
+          <div class="alert alert-danger">
+            il n'y a pas des annonces
+          </div>
+         <% } %> 
+           
+    </div>
+    <%- include('./signup.ejs') %>  
+<%- include('parts/footer.ejs') %>
